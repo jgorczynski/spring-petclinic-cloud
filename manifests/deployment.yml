@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: leavethevaultspringpetcliniccloud 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: leavethevaultspringpetcliniccloud
+  template:
+    metadata:
+      labels:
+        app: leavethevaultspringpetcliniccloud 
+    spec:
+      containers:
+        - name: leavethevaultspringpetcliniccloud 
+          image: wuslabacr.azurecr.io/leavethevaultspringpetcliniccloud
+          ports:
+          - containerPort: 8080
